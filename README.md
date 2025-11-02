@@ -1,12 +1,12 @@
 Manga-Rental-Management-System
 
-Overview
+**Overview**
 The Manga Rental Management System (MRMS) is a web application built with **Spring Boot** and **Oracle Database**, designed to manage manga rentals and member information efficiently.  
 It provides full **CRUD** (Create, Read, Update, Delete) operations for both manga titles and members, as well as a **Spring Batch** job that automatically **generates monthly member statistics**.
 
 ---
 
-Features
+**Features**
 
 Manga Management
 - View all manga titles
@@ -26,7 +26,7 @@ Member Management
 
 ---
 
-Tech Stack
+**Tech Stack**
 
 | Layer | Technology |
 |-------|-------------|
@@ -39,5 +39,5 @@ Tech Stack
 
 ---
 
- Database
-The database schema and initial data are provided in the `db/` folder.
+**Database**
+The database schema and initial data are provided in the **'schema_oracel.sql'** and **'data_oracel.sql'**.
