@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 02 Nov 2025 00:40:05 GMT</lastBuildDate><item><title><![CDATA[Spring Data 2025.1.0-RC2 released]]></title><link>https://spring.io/blog/2025/10/31/spring-data-2025-1-0-RC2-released</link><guid isPermaLink="true">https://spring.io/blog/2025/10/31/spring-data-2025-1-0-RC2-released</guid><dc:creator><![CDATA[christophstrobl]]></dc:creator><pubDate>Fri, 31 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce the second release candidate (RC) for the next Spring Data generation.&lt;/p&gt;
+&lt;p&gt;The RC picks up Spring Framework RC3 and Spring HATEOAS RC2 and ships mainly refinements as well as some structural cleanups in Spring Data Commons.
+You can find the complete changelog in the &lt;a href=&quot;https://github.com/spring-projects/spring-data-commons/wiki/Spring-Data-2025.1-Release-Notes&quot;&gt;Spring Data 2025.1 Release Notes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Going forward, we&apos;re planning to release Spring Data 2025.1 GA in mid-November, aligning with the upcoming Spring Framework 7.0 release.&lt;/p&gt;
+&lt;h2 id=&quot;202510-rc2&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#202510-rc2&quot; aria-label=&quot;202510 rc2 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2025.1.0-RC2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Spring Data Commons &lt;code&gt;4.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/commons/docs/4.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/commons/reference/4.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-commons/releases/tag/4.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data JPA &lt;code&gt;4.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/jpa/docs/4.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/jpa/reference/4.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-jpa/releases/tag/4.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data MongoDB &lt;code&gt;5.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/mongodb/docs/5.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/mongodb/reference/5.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-mongodb/releases/tag/5.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data Neo4j &lt;code&gt;8.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/neo4j/docs/8.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/neo4j/reference/8.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-neo4j/releases/tag/8.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data KeyValue &lt;code&gt;4.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/keyvalue/docs/4.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/keyvalue/reference/4.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-keyvalue/releases/tag/4.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data for Apache Cassandra &lt;code&gt;5.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/cassandra/docs/5.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/cassandra/reference/5.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-cassandra/releases/tag/5.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data LDAP &lt;code&gt;4.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/ldap/docs/4.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/ldap/reference/4.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-ldap/releases/tag/4.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data REST &lt;code&gt;5.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/rest/docs/5.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/rest/reference/5.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-rest/releases/tag/5.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data Redis &lt;code&gt;4.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/redis/docs/4.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/redis/reference/4.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-redis/releases/tag/4.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data Elasticsearch &lt;code&gt;6.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/elasticsearch/docs/6.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/elasticsearch/reference/6.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-elasticsearch/releases/tag/6.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data Couchbase &lt;code&gt;6.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/couchbase/docs/6.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/couchbase/reference/6.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-couchbase/releases/tag/6.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Spring Data Relational &lt;code&gt;4.0 RC2&lt;/code&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/relational/docs/4.0.0-RC2/api/&quot;&gt;Javadoc&lt;/a&gt; - &lt;a href=&quot;https://docs.spring.io/spring-data/relational/reference/4.0/&quot;&gt;Documentation&lt;/a&gt; - &lt;a href=&quot;https://github.com/spring-projects/spring-data-relational/releases/tag/4.0.0-RC2&quot;&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Spring Framework 7.0.0-RC3 available now]]></title><link>https://spring.io/blog/2025/10/31/spring-framework-7</link><guid isPermaLink="true">https://spring.io/blog/2025/10/31/spring-framework-7</guid><dc:creator><![CDATA[snicoll]]></dc:creator><pubDate>Fri, 31 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce the third release candidate for Spring Framework 7.0. This should be our last release candidate before our GA version in November.
+We have compiled all the upgrade information, new features and deprecations on the &lt;a href=&quot;https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes&quot;&gt;Spring Framework 7.0 release notes&lt;/a&gt; preview page.&lt;/p&gt;
+&lt;p&gt;Spring Framework &lt;code&gt;7.0.0-RC3&lt;/code&gt; ships with &lt;a href=&quot;https://github.com/spring-projects/spring-framework/releases/tag/v7.0.0-RC3&quot;&gt;17 new features, fixes, and documentation improvements&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-framework/&quot;&gt;Project Page&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-framework&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues&quot;&gt;Issues&lt;/a&gt; | &lt;a href=&quot;https://docs.spring.io/spring-framework/reference/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Bootiful Podcast: Elastic's developer advocate extraordinairre Philip Krenn on the state of logging]]></title><link>https://spring.io/blog/2025/10/30/a-bootiful-podcast-philip-krenn</link><guid isPermaLink="true">https://spring.io/blog/2025/10/30/a-bootiful-podcast-philip-krenn</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Thu, 30 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this installment, we talk to my friend and Elastic&apos;s developer advocate extraordinairre Philip Krenn on the state of logging&lt;/p&gt;
+&lt;iframe title=&quot;Elastic¡¯s developer advocate extraordinairre Philip Krenn on the state of logging&quot; allowtransparency=&quot;true&quot; height=&quot;300&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:300px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?from=embed&amp;i=bpysu-19ac367-pb&amp;square=1&amp;share=1&amp;download=1&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;rtl=0&amp;logo_link=&amp;btn-skin=7&amp;size=300&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[AWS Bedrock Prompt Caching Support in Spring AI]]></title><link>https://spring.io/blog/2025/10/30/spring-ai-bedrock-prompt-caching-blog</link><guid isPermaLink="true">https://spring.io/blog/2025/10/30/spring-ai-bedrock-prompt-caching-blog</guid><dc:creator><![CDATA[sobychacko]]></dc:creator><pubDate>Thu, 30 Oct 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In our &lt;a href=&quot;https://spring.io/blog/2025/10/27/spring-ai-anthropic-prompt-caching-blog&quot;&gt;previous blog post about Anthropic prompt caching&lt;/a&gt;, we explored how prompt caching dramatically reduces API costs and latency by reusing previously processed prompt content. We introduced Spring AI&apos;s five strategic caching patterns for Anthropic Claude models and showed how they automatically handle cache breakpoint placement while respecting the 4-breakpoint limit.&lt;/p&gt;
+&lt;p&gt;AWS Bedrock brings prompt caching to a broader ecosystem¡ªsupporting both Claude models (accessed via Bedrock) and Amazon&apos;s own Nova family. If you&apos;re considering Bedrock or already using it, you&apos;ll find the same Spring AI caching strategies apply with a few key differences.&lt;/p&gt;
+&lt;p&gt;In this blog post, we explain what&apos;s different about prompt caching in AWS Bedrock compared to Anthropic&apos;s direct API and how Spring AI maintains consistent patterns across both providers.&lt;/p&gt;
+&lt;h2 id=&quot;what-aws-bedrock-adds&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#what-aws-bedrock-adds&quot; aria-label=&quot;what aws bedrock adds permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;What AWS Bedrock Adds&lt;/h2&gt;
+&lt;p&gt;AWS Bedrock extends prompt caching beyond Claude to include Amazon Nova models:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Claude models&lt;/strong&gt; (via Bedrock):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Claude 3 Opus 4.1, Opus 4, Sonnet 4.5, Sonnet 4, Haiku 4.5&lt;/li&gt;
+&lt;li&gt;Claude 3.7 Sonnet, 3.5 Haiku&lt;/li&gt;
+&lt;li&gt;Full caching support including tool definitions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Amazon Nova models&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nova Micro, Lite, Pro, Premier&lt;/li&gt;
+&lt;li&gt;System and conversation caching support only&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For complete model details, see &lt;a href=&quot;https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html#prompt-caching-models&quot;&gt;AWS Bedrock supported models&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;key-differences-from-anthropic-direct-api&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#key-differences-from-anthropic-direct-api&quot; aria-label=&quot;key differences from anthropic direct api permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Key Differences from Anthropic Direct API&lt;/h2&gt;
+&lt;p&gt;While the core caching concepts remain the same (as covered in our &lt;a href=&quot;https://spring.io/blog/2025/10/27/spring-ai-anthropic-prompt-caching-blog&quot;&gt;previous blog&lt;/a&gt;), AWS Bedrock has several differences worth understanding.&lt;/p&gt;
+&lt;h3 id=&quot;fixed-5-minute-cache-ttl&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#fixed-5-minute-cache-ttl&quot; aria-label=&quot;fixed 5 minute cache ttl permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Fixed 5-Minute Cache TTL&lt;/h3&gt;
+&lt;p&gt;AWS Bedrock uses a fixed 5-minute TTL with no configuration options, while Anthropic&apos;s direct API offers optional 1-hour caching.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;// Anthropic direct API: optional TTL configuration
+AnthropicCacheOptions.builder()
+    .strategy(AnthropicCacheStrategy.SYSTEM_ONLY)
+    .messageTypeTtl(MessageType.SYSTEM, AnthropicCacheTtl.ONE_HOUR)
+    .build()
+
+// AWS Bedrock: always 5 minutes
+BedrockCacheOptions.builder()
+    .strategy(BedrockCacheStrategy.SYSTEM_ONLY)
+    .build()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For high-frequency workloads (requests every few seconds or minutes), the 5-minute TTL keeps the cache warm. For applications with requests spaced 5-30 minutes apart, cache entries may expire between requests.&lt;/p&gt;
+&lt;h3 id=&quot;tool-caching-not-supported-on-nova&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tool-caching-not-supported-on-nova&quot; aria-label=&quot;tool caching not supported on nova permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tool Caching Not Supported on Nova&lt;/h3&gt;
+&lt;p&gt;Amazon Nova models do not support tool caching. Attempting to use &lt;code&gt;TOOLS_ONLY&lt;/code&gt; or &lt;code&gt;SYSTEM_AND_TOOLS&lt;/code&gt; strategies with Nova throws an exception.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;// Works with Claude models
+BedrockChatOptions.builder()
+    .model(&quot;anthropic.claude-sonnet-4-5-20250929-v1:0&quot;)
+    .cacheOptions(BedrockCacheOptions.builder()
+        .strategy(BedrockCacheStrategy.SYSTEM_AND_TOOLS)
+        .build())
+		.toolCallbacks(tools)
+    .build()
+
+// Throws exception with Nova models
+BedrockChatOptions.builder()
+    .model(&quot;us.amazon.nova-pro-v1:0&quot;)
+    .cacheOptions(BedrockCacheOptions.builder()
+        .strategy(BedrockCacheStrategy.TOOLS_ONLY)
+        .build())
+		.toolCallbacks(tools)
+    .build()
+
+// Use SYSTEM_ONLY for Nova
+BedrockChatOptions.builder()
+    .model(&quot;us.amazon.nova-pro-v1:0&quot;)
+    .cacheOptions(BedrockCacheOptions.builder()
+        .strategy(BedrockCacheStrategy.SYSTEM_ONLY)
+        .build())
+		.build()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&quot;model-specific-token-thresholds&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#model-specific-token-thresholds&quot; aria-label=&quot;model specific token thresholds permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Model-Specific Token Thresholds&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Model&lt;/th&gt;
+&lt;th&gt;Minimum Tokens per Checkpoint&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Claude 3.7 Sonnet, 3.5 Sonnet v2, Opus 4, Sonnet 4, Sonnet 4.5&lt;/td&gt;
+&lt;td&gt;1,024&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Claude 3.5 Haiku&lt;/td&gt;
+&lt;td&gt;2,048&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Claude Haiku 4.5&lt;/td&gt;
+&lt;td&gt;4,096&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Amazon Nova (all variants)&lt;/td&gt;
+&lt;td&gt;1,000&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;See &lt;a href=&quot;https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html#prompt-caching-models&quot;&gt;Bedrock token limits documentation&lt;/a&gt; for details.&lt;/p&gt;
+&lt;h3 id=&quot;cache-metrics-naming&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#cache-metrics-naming&quot; aria-label=&quot;cache metrics naming permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cache Metrics Naming&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Metric&lt;/th&gt;
+&lt;th&gt;Anthropic Direct&lt;/th&gt;
+&lt;th&gt;AWS Bedrock&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Creating a cache entry&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cacheCreationInputTokens&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cacheWriteInputTokens&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Reading from cache&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cacheReadInputTokens&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cacheReadInputTokens&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;same-spring-ai-patterns-across-providers&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#same-spring-ai-patterns-across-providers&quot; aria-label=&quot;same spring ai patterns across providers permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Same Spring AI Patterns Across Providers&lt;/h2&gt;
+&lt;p&gt;Spring AI uses identical caching strategies across both providers:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;BedrockCacheStrategy.SYSTEM_ONLY           ¡û¡ú AnthropicCacheStrategy.SYSTEM_ONLY
+BedrockCacheStrategy.TOOLS_ONLY            ¡û¡ú AnthropicCacheStrategy.TOOLS_ONLY
+BedrockCacheStrategy.SYSTEM_AND_TOOLS      ¡û¡ú AnthropicCacheStrategy.SYSTEM_AND_TOOLS
+BedrockCacheStrategy.CONVERSATION_HISTORY  ¡û¡ú AnthropicCacheStrategy.CONVERSATION_HISTORY
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Let&apos;s take a look at how similar the code is:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;// Anthropic direct API
+ChatResponse response = anthropicChatModel.call(
+				new Prompt(
+						List.of(new SystemMessage(systemPrompt), new UserMessage(userQuery)),
+						AnthropicChatOptions.builder()
+								.model(AnthropicApi.ChatModel.CLAUDE_4_5_SONNET)
+								.cacheOptions(AnthropicCacheOptions.builder()
+										.strategy(AnthropicCacheStrategy.SYSTEM_ONLY)
+										.build())
+								.maxTokens(500)
+								.build()
+				)
+		);
+
+// AWS Bedrock (nearly identical)
+ChatResponse response = bedrockChatModel.call(
+		new Prompt(
+				List.of(new SystemMessage(systemPrompt), new UserMessage(userQuery)),
+				BedrockChatOptions.builder()
+						.model(&quot;anthropic.claude-sonnet-4-5-20250929-v1:0&quot;)
+						.cacheOptions(BedrockCacheOptions.builder()
+								.strategy(BedrockCacheStrategy.SYSTEM_ONLY)
+								.build())
+						.maxTokens(500)
+						.build()
+		)
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The only differences: the chat model instance, options class, and model identifier format.&lt;/p&gt;
+&lt;h2 id=&quot;provider-characteristics-at-a-glance&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#provider-characteristics-at-a-glance&quot; aria-label=&quot;provider characteristics at a glance permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Provider Characteristics at a Glance&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Feature&lt;/th&gt;
+&lt;th&gt;AWS Bedrock&lt;/th&gt;
+&lt;th&gt;Anthropic Direct&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Cache TTL&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;5 minutes (fixed)&lt;/td&gt;
+&lt;td&gt;5 minutes (default), 1 hour (optional)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Models&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Claude + Nova&lt;/td&gt;
+&lt;td&gt;Claude only&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Tool Caching&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Claude only&lt;/td&gt;
+&lt;td&gt;All Claude models&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Token Metrics&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cacheWriteInputTokens&lt;/code&gt;, &lt;code&gt;cacheReadInputTokens&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;cacheCreationInputTokens&lt;/code&gt;, &lt;code&gt;cacheReadInputTokens&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Pricing&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Varies by region/model&lt;/td&gt;
+&lt;td&gt;Published per-model&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Cost Pattern&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;~25% write premium, ~90% read savings&lt;/td&gt;
+&lt;td&gt;25% write premium, 90% read savings&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;example-document-analysis-with-caching&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#example-document-analysis-with-caching&quot; aria-label=&quot;example document analysis with caching permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Example: Document Analysis with Caching&lt;/h2&gt;
+&lt;p&gt;Here&apos;s a practical example showing cache effectiveness:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Service
+public class ContractAnalyzer {
+
+	private final BedrockProxyChatModel chatModel;
+	private final DocumentExtractor documentExtractor;
+
+	public AnalysisReport analyzeContract(String contractId) {
+		String contractText = documentExtractor.extract(contractId);
+
+		String systemPrompt = &quot;&quot;&quot;
+				You are an expert legal analyst specializing in commercial contracts.
+				Analyze the following contract and provide precise insights about
+				terms, obligations, risks, and opportunities:
+				
+				CONTRACT:
+				%s
+				&quot;&quot;&quot;.formatted(contractText);
+
+		String[] questions = {
+				&quot;What are the key legal clauses and penalties?&quot;,
+				&quot;Summarize the payment terms and financial obligations.&quot;,
+				&quot;What intellectual property rights are defined?&quot;,
+				&quot;Identify potential compliance risks.&quot;,
+				&quot;What are the performance milestones?&quot;
+		};
+
+		AnalysisReport report = new AnalysisReport();
+
+		BedrockChatOptions options = BedrockChatOptions.builder()
+				.model(&quot;anthropic.claude-sonnet-4-5-20250929-v1:0&quot;)
+				.cacheOptions(BedrockCacheOptions.builder()
+						.strategy(BedrockCacheStrategy.SYSTEM_ONLY)
+						.build())
+				.maxTokens(1000)
+				.build();
+
+		for (int i = 0; i &amp;#x3C; questions.length; i++) {
+			ChatResponse response = chatModel.call(
+					new Prompt(
+							List.of(new SystemMessage(systemPrompt), new UserMessage(questions[i])),
+							options
+					)
+			);
+
+			report.addSection(questions[i], response.getResult().getOutput().getText());
+			logCacheMetrics(response, i);
+		}
+
+		return report;
+	}
+
+	private void logCacheMetrics(ChatResponse response, int questionNum) {
+		Integer cacheWrite = (Integer) response.getMetadata()
+				.getMetadata().get(&quot;cacheWriteInputTokens&quot;);
+		Integer cacheRead = (Integer) response.getMetadata()
+				.getMetadata().get(&quot;cacheReadInputTokens&quot;);
+
+		if (questionNum == 0 &amp;#x26;&amp;#x26; cacheWrite != null) {
+			logger.info(&quot;Cache created: {} tokens&quot;, cacheWrite);
+		} else if (cacheRead != null &amp;#x26;&amp;#x26; cacheRead &gt; 0) {
+			logger.info(&quot;Cache hit: {} tokens&quot;, cacheRead);
+		}
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;AWS Bedrock provides cache metrics through the response metadata:&lt;/p&gt;
+&lt;p&gt;First request: &lt;code&gt;cacheWriteInputTokens&lt;/code&gt; &gt; 0, &lt;code&gt;cacheReadInputTokens&lt;/code&gt; = 0&lt;/p&gt;
+&lt;p&gt;Subsequent requests (within TTL): &lt;code&gt;cacheWriteInputTokens&lt;/code&gt; = 0, &lt;code&gt;cacheReadInputTokens&lt;/code&gt; &gt; 0&lt;/p&gt;
+&lt;p&gt;With a 3,500-token system prompt, this yields approximately 65% cost reduction on cached content (first question pays ~1.25x, subsequent questions pay ~0.10x).&lt;/p&gt;
+&lt;h2 id=&quot;using-different-models-on-bedrock&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#using-different-models-on-bedrock&quot; aria-label=&quot;using different models on bedrock permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Using Different Models on Bedrock&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Service
+public class MultiModelService {
+
+	// Nova: System prompt caching
+	public String analyzeWithNova(String document, String query) {
+		return chatClient.prompt()
+                .system(&quot;You are an expert analyst. Context: &quot; + document)
+				.user(query)
+				.options(BedrockChatOptions.builder()
+						.model(&quot;us.amazon.nova-pro-v1:0&quot;)
+						.cacheOptions(BedrockCacheOptions.builder()
+								.strategy(BedrockCacheStrategy.SYSTEM_ONLY)
+								.build())
+						.maxTokens(500)
+						.build())
+				.call()
+				.content();
+	}
+
+	// Claude: System + tool caching
+	public String analyzeWithTools(String document, String query,
+			List&amp;#x3C;ToolCallback&gt; tools) {
+		return chatClient.prompt()
+				.system(&quot;You are an expert analyst. Context: &quot; + document)
+				.user(query)
+				.options(BedrockChatOptions.builder()
+						.model(&quot;anthropic.claude-sonnet-4-5-20250929-v1:0&quot;)
+						.cacheOptions(BedrockCacheOptions.builder()
+								.strategy(BedrockCacheStrategy.SYSTEM_AND_TOOLS)
+								.build())
+						.toolCallbacks(tools)
+						.maxTokens(500)
+						.build())
+				.call()
+				.content();
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;getting-started&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#getting-started&quot; aria-label=&quot;getting started permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;Add the Spring AI Bedrock Converse starter:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; AWS Bedrock Prompt caching support is available in Spring AI &lt;code&gt;1.1.0&lt;/code&gt; and later. Try it with the latest &lt;code&gt;1.1.0-SNAPSHOT&lt;/code&gt; version.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;#x3C;dependency&gt;
+	&amp;#x3C;groupId&gt;org.springframework.ai&amp;#x3C;/groupId&gt;
+	&amp;#x3C;artifactId&gt;spring-ai-starter-model-bedrock-converse&amp;#x3C;/artifactId&gt;
+&amp;#x3C;/dependency&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Configure AWS credentials:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-properties&quot;&gt;spring.ai.bedrock.aws.region=us-east-1
+spring.ai.bedrock.aws.access-key=${AWS_ACCESS_KEY_ID}
+spring.ai.bedrock.aws.secret-key=${AWS_SECRET_ACCESS_KEY}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can then start using prompt caching via AWS Bedrock as shown in the examples above.&lt;/p&gt;
+&lt;h2 id=&quot;strategy-selection-reference&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#strategy-selection-reference&quot; aria-label=&quot;strategy selection reference permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Strategy Selection Reference&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Strategy&lt;/th&gt;
+&lt;th&gt;Use When&lt;/th&gt;
+&lt;th&gt;Claude&lt;/th&gt;
+&lt;th&gt;Nova&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SYSTEM_ONLY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Large stable system prompt&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;TOOLS_ONLY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Large stable tools, dynamic system&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;SYSTEM_AND_TOOLS&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Both large and stable&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;CONVERSATION_HISTORY&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Multi-turn conversations&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;NONE&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Disable caching explicitly&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For detailed strategy explanations, cache hierarchy, and cascade invalidation patterns, see our &lt;a href=&quot;https://spring.io/blog/2025/10/27/spring-ai-anthropic-prompt-caching-blog&quot;&gt;Anthropic prompt caching blog post&lt;/a&gt;. These concepts still hold true in the case of AWS Bedrock.&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#conclusion&quot; aria-label=&quot;conclusion permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;AWS Bedrock extends prompt caching to Amazon Nova models while maintaining full support for Claude models. The key differences from Anthropic&apos;s direct API are a fixed 5-minute TTL, Nova&apos;s lack of tool caching support, and region-specific pricing.&lt;/p&gt;
+&lt;p&gt;Spring AI provides the same strategic caching patterns across both providers. Whether you choose Claude through Anthropic, Claude through Bedrock, or Amazon Nova models, the five caching strategies work consistently with minimal code changes.&lt;/p&gt;
+&lt;p&gt;The decision between providers depends on model availability (Nova is only on Bedrock), cache TTL requirements, and tool caching needs (Nova doesn&apos;t support it).&lt;/p&gt;
+&lt;p&gt;For more on prompt caching support in Spring AI for AWS Bercok see &lt;a href=&quot;https://docs.spring.io/spring-ai/reference/1.1-SNAPSHOT/api/chat/bedrock-converse.html#_prompt_caching&quot;&gt;Spring AI Bedrock documentation&lt;/a&gt; and &lt;a href=&quot;https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html&quot;&gt;AWS Bedrock Prompt Caching documentation&lt;/a&gt;.&lt;/p&gt;</content:encoded></item></channel></rss>

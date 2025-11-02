@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.PrefectureMapper">
+	
+	<!-- すべての都道府県を検索する -->
+	<select id="getAllPrefectures" resultType="Prefecture">
+	    SELECT pre_cd,
+	    		pre_name
+	   	FROM prefecture
+	</select>
+	<!-- すべての都道府県を検索する -->
+	<select id="getAllPrefecturesMemberData" resultType="MemberData">
+	    SELECT 
+	    		pre_name as addr1
+	   	FROM prefecture
+	   	order by pre_cd
+	</select>
+	<select id="getAllPrefecturesAndCity" resultType="MemberData">
+		SELECT 
+          pre_name as addr1,
+          city_name as addr2
+        FROM prefecture p
+        join  city c on p.pre_cd = c.pre_cd
+        order by c.pre_cd
+	</select>
+	<select id="getAllPrefecturesData" resultType="Prefecture">
+		SELECT 
+        d.pre_cd,        
+        d.pre_name, 
+        COUNT(m.mem_id) AS current_month_count,
+        NVL(SUM(CASE 
+                  WHEN m.expiry_date > SYSDATE - INTERVAL '1' MONTH THEN 1
+                ELSE 0
+                 END), 0) AS last_month_count,
+         COUNT(m.addr2) - NVL(SUM(CASE 
+                  WHEN m.expiry_date > SYSDATE - INTERVAL '1' MONTH THEN 1
+                  ELSE 0
+               END), 0) AS change_from_last_month
+	    FROM 
+	        prefecture d
+	    LEFT JOIN 
+	        customer m ON d.pre_name = m.addr1 
+	    where expiry_date > SYSDATE and del_flag = 0
+	    GROUP BY 
+	        d.pre_cd, d.pre_name
+	</select>
+	<select id="getAllCitysData" resultType="City">
+		SELECT 
+			c.pre_cd,
+		    c.city_id,                                 
+		    c.city_name,                             
+		    COUNT(cus.addr2) AS current_month_count,   
+		    NVL(SUM(CASE 
+		              WHEN cus.expiry_date > TRUNC(SYSDATE, 'MM') - INTERVAL '1' MONTH THEN 1
+		              ELSE 0
+		           END), 0) AS last_month_count,  
+		    COUNT(cus.addr2) - NVL(SUM(CASE 
+		              WHEN cus.expiry_date > TRUNC(SYSDATE, 'MM') - INTERVAL '1' MONTH THEN 1
+		              ELSE 0
+		           END), 0) AS change_from_last_month  
+		FROM 
+		    City c
+		LEFT JOIN 
+		    Customer cus ON c.city_name = cus.addr2   
+		where expiry_date > SYSDATE and del_flag = 0
+		GROUP BY 
+		    c.pre_cd, c.city_id, c.city_name
+	</select>
+</mapper>

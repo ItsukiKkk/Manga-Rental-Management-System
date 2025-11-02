@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.CategoryMapper">
+	<!-- IDによる検索する -->
+	<select id="getCategoryById" parameterType="String" resultType="Category">
+		SELECT category_cd, category
+		FROM category WHERE category_cd = #{categoryCd}
+	</select>
+	
+	<!-- 名前による検索する -->
+	<select id="getCategoryByCategory" parameterType="String" resultType="Category">
+		SELECT category_cd, category
+		FROM category WHERE category = #{category}
+	</select>
+	
+	<!-- すべてのカテゴリー情報を検索する -->
+	<select id="getCategoryList" resultType="Category">
+		SELECT category_cd, category
+      	FROM category ORDER BY category_cd
+	</select>
+	<!--IDとカテゴリーによるすべてのカテゴリーを検索する -->
+	<select id="selctCategoryList" resultType="Category">
+		SELECT category_cd, category
+      	FROM category 
+      	<where>
+      		<if test="category.categoryCd  != null and category.categoryCd != ''">
+      			AND category_cd = #{category.categoryCd}
+      		</if>
+      		<if test="category.category  != null and category.category != ''">
+      			AND category LIKE '%${category.category}%'
+      		</if>
+      	</where>
+      	ORDER BY category_cd 
+	</select>
+	<!--カテゴリー新規登録 -->
+	<insert id="insertCategory" useGeneratedKeys="true" keyProperty="categoryCd">
+		INSERT INTO category(category) VALUES(#{category})
+		<selectKey keyProperty="categoryCd" resultType="String" order="AFTER">
+<!-- 		    SELECT TO_CHAR(title_seq.currval, 'FM00000000') AS title FROM DUAL -->
+		    SELECT TO_CHAR(TITLE_SEQ.NEXTVAL, 'FM00000000') AS title FROM DUAL
+		</selectKey>
+	</insert>
+	<!--カテゴリー更新 -->
+	<update id="updateCategory">
+		UPDATE category SET category = #{category.category}
+		WHERE category_cd = #{category.categoryCd}
+	</update>
+	<!--カテゴリー削除 -->
+	<delete id="deleteCategory">
+		DELETE FROM category WHERE category_cd = #{categoryCd}
+	</delete>
+</mapper>

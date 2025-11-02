@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.TitleMapper">
+	<resultMap type="Title" id="TitleResultMap">
+		<id column="title_id" property="titleId"/>
+		<result column="title" property="title"/>
+		<result column="tem_cd" property="temCd"/>
+		<result column="ctg_cd" property="ctgCd"/>
+		<result column="actor" property="actor"/>
+		<association column="ctg_cd" property="category" javaType="Category" select="com.seiryo.dao.CategoryMapper.getCategoryById" fetchType="eager"/>
+	</resultMap>
+	
+	<!-- IDによる検索する -->
+	<select id="getTitleById" parameterType="String" resultMap="TitleResultMap">
+		SELECT t.title_id,
+           t.title,
+           t.tem_cd,
+           t.ctg_cd,
+           t.actor,
+           c.category_cd,
+           c.category
+	   FROM title t
+	   LEFT JOIN category c ON t.ctg_cd = c.category_cd
+	   WHERE t.title_id = #{titleId}
+	</select>
+	
+	<!-- temCdによる検索する -->
+	<select id="getTitleByTemCd" parameterType="String" resultMap="TitleResultMap">
+	    SELECT t.title_id,
+	           t.title,
+	           t.tem_cd,
+	           t.ctg_cd,
+	           t.actor,
+	           c.category_cd,
+	           c.category
+	    FROM title t
+	    LEFT JOIN category c ON t.ctg_cd = c.category_cd
+	    WHERE t.tem_cd = #{temCd}
+	</select>
+	
+	<!-- すべてのタイトル情報を検索する -->
+	<select id="getAllTitles" resultMap="TitleResultMap">
+		SELECT t.title_id,
+			t.title,
+			t.tem_cd,
+			t.ctg_cd,
+			t.actor,
+			c.category_cd,
+			c.category
+		FROM title t
+		LEFT JOIN category c ON t.ctg_cd = c.category_cd
+		ORDER BY t.title_id
+	</select>
+	
+	<!-- 入力された条件でタイトルを検索する -->
+	<select id="getTitleList" resultMap="TitleResultMap">
+		SELECT t.title_id,
+			t.title,
+			t.tem_cd,
+			t.ctg_cd,
+			t.actor,
+			c.category_cd,
+			c.category
+		FROM title t
+		LEFT JOIN category c ON t.ctg_cd = c.category_cd
+      	<where>
+		    <if test="titleId != null and titleId != '' ">
+		        AND t.title_id = #{titleId}
+		    </if>
+		    <if test="title != null and title != '' ">
+		        AND t.title LIKE '%' || #{title} || '%'
+		    </if>
+		    <if test="temCd != null and temCd != ''">
+		        AND t.tem_cd LIKE '%' || #{temCd} || '%'
+		    </if>
+		    <if test="ctgCd != null and ctgCd != '' ">
+		        AND t.ctg_cd = #{ctgCd}
+		    </if>
+		    <if test="actor != null and actor != '' ">
+		        AND t.actor LIKE '%' || #{actor} || '%'#
+		    </if>
+		    <if test="category != null">
+		    	<if test="category.category != null and category.category != ''">
+		    		AND c.category = #{category.category}
+		    	</if>		        
+		    </if>
+		</where>
+		 ORDER BY t.title_id
+	</select>
+	
+	<!-- タイトル情報を登録する -->
+	<insert id="insertTitle" useGeneratedKeys="true" keyProperty="titleId">
+		INSERT INTO title(title, tem_cd, ctg_cd, actor)
+		VALUES(#{title}, #{temCd}, #{ctgCd}, #{actor})
+		<selectKey keyProperty="titleId" resultType="String" order="AFTER">
+		    SELECT TO_CHAR(title_seq.currval, 'FM00000000') AS title FROM DUAL
+		</selectKey>
+	</insert>
+	
+	<!-- タイトル情報を更新する -->
+	<update id="updateTitle">
+		UPDATE title
+		SET 
+			title = #{title},
+			tem_cd = #{temCd},
+			ctg_cd = #{ctgCd},
+			actor = #{actor}
+	    WHERE title_id = #{titleId}
+	</update>
+	
+	<!-- タイトル情報を削除する -->
+	<delete id="delTitle">
+   		DELETE FROM title
+    	WHERE title_id = #{titleId}
+	</delete>
+
+</mapper>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.CustomerMapper">
+
+	<resultMap id="mapperCustomer" type="com.seiryo.pojo.Customer">
+		<id property="memId" column="MEM_ID"/>
+		<result property="lastname" column="LASTNAME"/>
+		<result property="lastkana" column="LASTKANA"/>
+		<result property="firstname" column="FIRSTNAME"/>
+		<result property="firstkana" column="FIRSTKANA"/>
+		<result property="birthdate" column="BIRTHDATE"/>
+		<result property="post" column="POST"/>
+		<result property="addr1" column="ADDR1"/>
+		<result property="addr2" column="ADDR2"/>
+		<result property="addr3" column="ADDR3"/>
+		<result property="tel1" column="TEL1"/>
+		<result property="tel2" column="TEL2"/>
+		<result property="tel3" column="TEL3"/>
+		<result property="password" column="PASSWORD"/>
+		<result property="idFlag" column="ID_FLAG"/>
+		<result property="applyDate" column="APPLY_DATE"/>
+		<result property="expiryDate" column="EXPIRY_DATE"/>
+		<result property="delFlag" column="DEL_FLAG"/>
+		
+		<result property="age" column="age"/>
+		<result property="status" column="status"/>
+		<result property="accumulativeDay" column="accumulativeDay"/>
+		<result property="accumulativeYear" column="accumulativeYear"/>
+	</resultMap>
+	<!-- IDによる検索する -->
+	<select id="getCustomerById" parameterType="String" resultType="Customer">
+	    SELECT mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag
+		FROM customer WHERE mem_id = #{memId} ORDER BY mem_id
+	</select>
+	
+	<!-- すべての会員情報を検索する -->
+	<select id="getAllCustomers" resultType="Customer">
+		SELECT mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag
+      	FROM customer ORDER BY mem_id
+	</select>
+	
+	<!-- 入力された条件で会員情報を検索する -->
+	<select id="getCustomerList" resultType="Customer">
+		SELECT mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag
+      	FROM customer
+      	<where>
+		    <if test="memId != null and memId != '' ">
+		        AND mem_id = #{memId}
+		    </if>
+		    <if test="lastname != null and lastname != ''">
+		        AND lastname LIKE '%' || #{lastname} || '%'
+		    </if>
+		    <if test="lastkana != null and lastkana != ''">
+		        AND lastkana LIKE '%' || #{lastkana} || '%'
+		    </if>
+		    <if test="firstname != null and firstname != ''">
+		        AND firstname LIKE '%' || #{firstname} || '%'
+		    </if>
+		    <if test="firstkana != null and firstkana != ''">
+		        AND firstkana LIKE '%' || #{firstkana} || '%'
+		    </if>
+		</where>
+		ORDER BY mem_id
+	</select>
+	
+	<!-- 会員情報を登録する -->
+	<insert id="insertCustomer" useGeneratedKeys="true" keyProperty="memId">
+		INSERT INTO customer(
+			lastname, lastkana, firstname, firstkana, birthdate, 
+    		post, addr1, addr2, addr3, tel1, tel2, tel3, password, id_flag, 
+    		apply_date, expiry_date, del_flag
+		)
+		VALUES(
+			#{lastname},
+		    #{lastkana},
+		    #{firstname},
+		    #{firstkana},
+		    to_date(#{birthdate},'yyyy-mm-dd'),
+		    #{post},
+		    #{addr1},
+		    #{addr2},
+		    #{addr3},
+		    #{tel1},
+		    #{tel2},
+		    #{tel3},
+		    #{password},
+		    #{idFlag},
+		    to_date(#{applyDate},'yyyy-mm-dd'),
+		    to_date(#{expiryDate},'yyyy-mm-dd'),
+		    #{delFlag}
+		)
+		<selectKey keyProperty="memId" resultType="String" order="AFTER">
+		    SELECT TO_CHAR(customer_seq.currval, 'FM00000000') AS memId FROM DUAL
+		</selectKey>
+	</insert>
+	
+	<!-- 会員情報を更新する -->
+	<update id="updateCustomer">
+		UPDATE customer
+		SET 
+		    lastname = #{lastname},
+		    lastkana = #{lastkana},
+		    firstname = #{firstname},
+		    firstkana = #{firstkana},
+		    birthdate = to_date(#{birthdate},'yyyy-mm-dd'),
+		    post = #{post},
+		    addr1 = #{addr1},
+		    addr2 = #{addr2},
+		    addr3 = #{addr3},
+		    tel1 = #{tel1},
+		    tel2 = #{tel2},
+		    tel3 = #{tel3},
+		    password = #{password},
+		    id_flag = #{idFlag},
+		    apply_date = to_date(#{applyDate},'yyyy-mm-dd'),
+		    expiry_date = to_date(#{expiryDate},'yyyy-mm-dd')
+		WHERE mem_id = #{memId}
+	</update>
+	
+	<!-- 退会処理 -->
+	<update id="cancelCustomer" parameterType="String">
+		UPDATE customer
+		SET 
+	        expiry_date = TRUNC(SYSDATE),
+	        del_flag = 1
+	    WHERE mem_id = #{memId}
+	</update>
+	<!-- すべて会員情報プラスage、 accumulativeDayを検索する -->
+	<select id="getAllCustomersPlus" resultMap="mapperCustomer">
+		SELECT mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag,
+			FLOOR(MONTHS_BETWEEN(NVL(#{memberData.currentDate}, SYSDATE), birthdate) / 12) AS age,
+            FLOOR(MONTHS_BETWEEN(NVL(#{memberData.currentDate}, SYSDATE), apply_date) / 12) AS accumulativeYear,
+            NVL(#{memberData.currentDate}, SYSDATE) - apply_date AS accumulativeDay,
+            NVL(#{memberData.currentDate}, SYSDATE) - expiry_date AS status
+     FROM customer 
+     order by del_flag, NVL(#{memberData.currentDate}, SYSDATE) - expiry_date
+      	
+	</select>
+	<!-- 会員年齢による会員情報を検索する -->
+	<select id="getCustomerListByAge" resultType="Customer">
+		select mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag,
+            FLOOR(MONTHS_BETWEEN(NVL(#{memberData.currentDate}, SYSDATE), birthdate) / 12) AS age
+           
+      	FROM customer
+      	where 
+	      	expiry_date &gt; #{memberData.currentDate}
+	      	and del_flag = 0
+   			 <if test="memberData.currentDate != null">
+          		AND FLOOR(MONTHS_BETWEEN(NVL(#{memberData.currentDate}, SYSDATE), birthdate) / 12) &lt; #{memberData.age}
+      		 </if>
+	</select>
+	
+	<!-- 総会員と期限切れ人数統計 -->
+	<select id="getCustomerCount" resultType="java.lang.Integer">
+		select count(mem_id) as monthCount from customer
+		<where>
+			<if test="memberData.ifExpired == 0">
+			and expiry_date &lt; #{memberData.currentDate}
+			</if>
+			<if test="memberData.ifExpired == 1">
+			and expiry_date &gt; #{memberData.currentDate}
+			</if>
+		</where>
+	</select>
+	<!-- 地域による検索 -->
+	<select id="getCustomerListByAddr" resultType="Customer" >
+		select mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag
+      	FROM customer
+      	<where>
+      		expiry_date &gt; #{memberData.currentDate}
+      		<if test="memberData.addr1 != null and memberData.addr1 != ''">
+      			and addr1 = #{memberData.addr1}
+      		</if>
+      		<if test="memberData.addr2 != null and memberData.addr2 != ''">
+      			and addr2 = #{memberData.addr2}
+      		</if>
+      	</where>
+	</select>
+	<!-- 今月期限が切れているかどうかによる会員情報を検索する -->
+	<select id="getCustomerListByExpired" resultType="Customer">
+		select mem_id, 
+			lastname, 
+			lastkana, 
+			firstname, 
+			firstkana,
+			birthdate,
+			post,
+			addr1,
+			addr2,
+			addr3,
+			tel1,
+			tel2,
+			tel3, 
+			password,
+			id_flag,
+      		apply_date,
+      		expiry_date,
+      		del_flag
+      	FROM customer
+      	<where>
+<!--       		今月新規登録会員 -->
+      		<if test="memberData.ifExpired == 1">
+      			and  apply_date &gt; #{memberData.lastMouth} and apply_date &lt; #{memberData.currentDate}
+      		</if>
+<!--       		今月期限切れ会員 -->
+      		<if test="memberData.ifExpired == 0">
+      			and  expiry_date &gt; #{memberData.lastMouth} and expiry_date &lt; #{memberData.currentDate}
+      			and del_flag = 1
+      		</if>
+      	</where>
+	</select>
+</mapper>

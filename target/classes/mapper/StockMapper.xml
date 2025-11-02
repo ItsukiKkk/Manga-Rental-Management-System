@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.StockMapper">
+	<resultMap type="Stock" id="StockResultMap">
+		<id column="stock_no" property="stockNo"/>
+		<id column="title_id" property="titleId"/>
+		<result column="stock_state" property="stockState"/>		
+		<association column="title_id" property="title" javaType="Title" resultMap="com.seiryo.dao.TitleMapper.TitleResultMap" fetchType="eager"/>
+	</resultMap>
+	<!-- IDによる検索する -->
+	<select id="getStockById" parameterType="String" resultMap="StockResultMap">
+		SELECT s.title_id,
+			s.stock_no,
+			s.stock_state,
+			t.title_id,
+			t.title,
+			t.tem_cd,
+			t.ctg_cd,
+			t.actor
+		FROM stock s
+		LEFT JOIN title t ON s.title_id = t.title_id
+		WHERE s.stock_no = #{stockNo} AND s.title_id = #{titleId}
+	</select>
+	
+	<!-- すべての在庫情報を検索する -->
+	<select id="getAllStocks" resultMap="StockResultMap">
+		SELECT s.title_id,
+			s.stock_no,
+			s.stock_state,
+			t.title_id,
+			t.title,
+			t.tem_cd,
+			t.ctg_cd,
+			t.actor
+		FROM stock s
+		LEFT JOIN title t ON s.title_id = t.title_id
+		ORDER BY s.title_id ASC, s.stock_no ASC
+	</select>
+	
+	<!-- 入力された条件で在庫を検索する -->
+	<select id="getStockList" parameterType="Stock" resultMap="StockResultMap">
+		SELECT s.title_id,
+			s.stock_no,
+			s.stock_state,
+			t.title_id,
+			t.title,
+			t.tem_cd,
+			t.ctg_cd,
+			t.actor
+		FROM stock s
+		LEFT JOIN title t ON s.title_id = t.title_id
+      	<where>
+      		<if test="titleId != null and titleId != ''">
+		        AND t.title_id LIKE '%' || #{titleId} || '%'
+		    </if>
+		    <if test="title != null">
+		    	<if test="title.title != null and title.title != ''">
+			        AND t.title LIKE '%' || #{title.title} || '%'
+			    </if>
+			    <if test="title.temCd != null and title.temCd != '' ">
+			        AND t.tem_cd LIKE '%' || #{title.temCd} || '%'
+			    </if>
+			    <if test="title.ctgCd != null and title.ctgCd != '' ">
+			        AND t.ctg_cd = #{title.ctgCd}
+			    </if>
+			    <if test="title.actor != null and title.actor != ''">
+			        AND t.actor LIKE '%' || #{title.actor} || '%'
+			    </if>		        
+		    </if>
+		    
+		</where>
+		ORDER BY s.title_id ASC, s.stock_no ASC
+	</select>
+	
+	<!-- 在庫情報を登録する -->
+	<insert id="insertStock">
+		INSERT INTO stock(title_id, stock_state)
+		VALUES(#{titleId}, #{stockState})
+	</insert>
+	
+	<!-- 在庫情報を更新する -->
+	<update id="updateStock">
+		UPDATE stock
+		SET 
+			stock_state = #{stock.stockState}
+	    WHERE stock_no = #{stock.stockNo} AND title_id = #{stock.titleId}
+	</update>
+	
+	<!-- 在庫情報を削除する -->
+	<delete id="delStock">
+   		DELETE FROM stock
+    	WHERE stock_no = #{stockNo} AND title_id = #{titleId}
+	</delete>
+
+</mapper>

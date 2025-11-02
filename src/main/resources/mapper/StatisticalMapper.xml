@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.seiryo.dao.StatisticalMapper">
+	<select id="allStatistical" resultType="com.seiryo.pojo.Statistical">
+		select 
+			Statistical_Id,
+			Statistical_Name,
+			Statistical_URL,
+			Statistical_Number,
+			TO_CHAR(Statistical_Date,'yyyy-MM-dd') AS statistical_Date
+		 from STATISTICAL_LOG
+		order by STATISTICAL_ID
+	</select>
+	<update id="updateStatisticalNumber">
+		update STATISTICAL_LOG set STATISTICAL_NUMBER = #{number} 
+		where STATISTICAL_ID = #{id}
+	</update>
+	<select id="getDownloadNumber" resultType="java.lang.Integer">
+		select Statistical_Number from STATISTICAL_LOG
+		where Statistical_Id = #{id}
+	</select>
+	<insert id="insertStatistical">
+		insert into STATISTICAL_LOG(
+			Statistical_Name,
+			Statistical_URL,
+			Statistical_Number,
+			Statistical_date
+		) values(
+			#{statistical.statisticalName},
+			#{statistical.statisticalURL},
+			#{statistical.statisticalNumber},
+			#{statistical.statisticalDate}
+		)
+	</insert>
+</mapper>
